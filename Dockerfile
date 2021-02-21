@@ -10,6 +10,5 @@ COPY . .
 RUN npm run test
 
 FROM test as prod
-RUN npm ci --production
-COPY . .
+RUN npm prune --production
 CMD ["node", "server.js"]
